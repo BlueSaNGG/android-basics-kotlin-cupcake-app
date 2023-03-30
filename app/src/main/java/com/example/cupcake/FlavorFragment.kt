@@ -48,11 +48,10 @@ class FlavorFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         binding?.apply {
+            flavorFragment = this@FlavorFragment
             viewModel = sharedViewModel  // UI can access the viewmodel data
             lifecycleOwner = viewLifecycleOwner  // update the live data automatically
-            nextButton.setOnClickListener { goToNextScreen() }
         }
     }
 
@@ -60,7 +59,6 @@ class FlavorFragment : Fragment() {
      * Navigate to the next screen to choose pickup date.
      */
     fun goToNextScreen() {
-        Toast.makeText(activity, "Next", Toast.LENGTH_SHORT).show()
         findNavController().navigate(R.id.action_flavorFragment_to_pickupFragment)
     }
 

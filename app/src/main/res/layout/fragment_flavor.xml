@@ -20,7 +20,9 @@
     tools:context=".FlavorFragment">
 
     <data>
-
+        <variable
+            name="flavorFragment"
+            type="com.example.cupcake.FlavorFragment" />
         <variable
             name="viewModel"
             type="com.example.cupcake.model.OrderViewModel" />
@@ -114,6 +116,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
+                android:onClick="@{() -> flavorFragment.goToNextScreen()}"
                 app:layout_constraintTop_toBottomOf="@id/subtotal" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
