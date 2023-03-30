@@ -50,7 +50,8 @@ class FlavorFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding?.apply {
-            viewModel = sharedViewModel
+            viewModel = sharedViewModel  // UI can access the viewmodel data
+            lifecycleOwner = viewLifecycleOwner  // update the live data automatically
             nextButton.setOnClickListener { goToNextScreen() }
         }
     }
